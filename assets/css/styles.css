@@ -24,3 +24,13 @@
 .city-search {
     padding-top: 1rem;
 }
+
+/******** City Data ********/
+
+#cityData {
+    margin-top: 1rem;
+}
+
+.city-card div:not(:first-child) {
+    margin-bottom: 0.5rem;
+}
