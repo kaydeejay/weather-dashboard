@@ -5,12 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Local Weather Dashboard</title>
-    <!-- import jquery -->
-    <script
-		src="https://code.jquery.com/jquery-3.4.1.min.js"
-        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-        crossorigin="anonymous">
-    </script>
     <!-- import bootstrap -->
     <link 
         rel="stylesheet" 
@@ -36,7 +30,8 @@
             <div class="col-3">
                 <form class="city-search">
                     <div class="input-group mb-3">
-                        <input 
+                        <input
+                            id="cityName" 
                             type="text" 
                             class="form-control" 
                             placeholder="Search for a City" 
@@ -44,22 +39,15 @@
                         <div class="input-group-append">
                             <button 
                                 class="btn btn-outline-secondary" 
-                                action="submit" 
-                                type="button" 
+                                type="submit" 
                                 id="button-addon2"
                             >
-                                <span class="fas fa-search"></span>
+                            <span class="fa fa-search"></span>
                             </button>
                         </div>
                     </div>
                 </form>
-                <ul class="list-group">
-                    <li class="list-group-item">New York</li>
-                    <li class="list-group-item">Miami</li>
-                    <li class="list-group-item">Los Angeles</li>
-                    <li class="list-group-item">Chicago</li>
-                    <li class="list-group-item">Jakarta</li>
-                </ul>
+                <ul class="list-group"></ul>
             </div>
             <div class="col-9">
                 <div class="card" id="cityData">
