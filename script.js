@@ -16,6 +16,8 @@ $(document).ready(function(){
             method: "GET"
           }).then(function(response){
             console.log(JSON.stringify(response));
+            $(".city-title").text(city);
+            $("#cityTemp").text(Math.round((response.main.temp - 273.15)*1.8 + 32) + '&#8451;');
           });
         
     }
