@@ -5,6 +5,22 @@ $(document).ready(function(){
     var searchedCities = [];
     
     $(searchForm).submit(addCity);
+    popFromLocal();
+
+    function popFromLocal(){
+        var lastSearched = localStorage[localStorage.length-1];
+
+        getCityData(lastSearched);
+        for (var i=0; i<localStorage.length; i++){
+            var cityList = $(".list-group");
+            var newCityEl = $("<li>");
+
+            $(newCityEl).attr("class", "list-group-item");
+            $(newCityEl).text(localStorage[i]);
+            $(cityList).prepend(newCityEl);
+            $(newCityEl).on("click", reloadCity);
+        }
+    }
     
     function addCity(){
         event.preventDefault();
@@ -19,10 +35,11 @@ $(document).ready(function(){
             $(newCityEl).text(newCity);
             $(cityList).prepend(newCityEl);
             $("#cityName").val("");
-
             $(newCityEl).on("click", reloadCity);
+
+            localStorage.setItem(localStorage.length, newCity);
             getCityData(newCity);
-        } 
+        }
     }
 
     function reloadCity(){
@@ -109,8 +126,6 @@ $(document).ready(function(){
             }
         });
     }
-
-    
 
     function dateParser(date){
         var a = new Date(date * 1000);
