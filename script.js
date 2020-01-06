@@ -57,7 +57,7 @@ $(document).ready(function(){
             var latitude = response.coord.lat;
             var longitude = response.coord.lon;
             var cityDate = dateParser(response.dt);
-            var cityIconURL ="http://openweathermap.org/img/wn/" + response.weather[0].icon + "@2x.png";
+            var cityIconURL ="https://openweathermap.org/img/wn/" + response.weather[0].icon + "@2x.png";
 
             $(".city-title").text(city + ' ' + cityDate);
             $(".city-icon").attr("src", cityIconURL);
@@ -72,7 +72,7 @@ $(document).ready(function(){
     }
 
     function getUV(lat, lon){
-        var uvURL = "http://api.openweathermap.org/data/2.5/uvi?appid=" + apiKey + "&lat=" + lat + "&lon=" + lon;
+        var uvURL = "https://api.openweathermap.org/data/2.5/uvi?appid=" + apiKey + "&lat=" + lat + "&lon=" + lon;
         
         $.ajax({
             url: uvURL,
@@ -83,7 +83,7 @@ $(document).ready(function(){
     }
 
     function getFiveDay(cityID){
-        var fiveDayURL = "http://api.openweathermap.org/data/2.5/forecast?id=" + cityID + "&appid=" + apiKey;
+        var fiveDayURL = "https://api.openweathermap.org/data/2.5/forecast?id=" + cityID + "&appid=" + apiKey;
 
         $.ajax({
             url: fiveDayURL,
@@ -108,7 +108,7 @@ $(document).ready(function(){
                 var weatherIcon = $("<img>");
                 var tempEl = $("<div>");
                 var humidEl = $("<div>");
-                var iconURL = "http://openweathermap.org/img/wn/" + response.list[i].weather[0].icon + "@2x.png";
+                var iconURL = "https://openweathermap.org/img/wn/" + response.list[i].weather[0].icon + "@2x.png";
 
                 $(currentBadge).empty();
 
