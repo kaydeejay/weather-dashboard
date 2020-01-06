@@ -17,6 +17,11 @@
         rel="stylesheet" 
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     >
+    <!-- import weather icons -->
+    <link
+        rel="stylesheet"
+        href="./assets/css/weather-icons.min.css"
+    >
     <!-- import local css -->
     <link rel="stylesheet" type="text/css" href="./assets/css/styles.css">
 </head>
@@ -53,6 +58,7 @@
                 <div class="card" id="cityData">
                     <div class="city-card card-body">
                         <h5 class="city-title"></h5>
+                        <img class="city-icon">
                         <div class="city-temp">Temperature: <span id="cityTemp"></span></div>
                         <div class="city-humid">Humidity: <span id="cityHumid"></span></div>
                         <div class="city-wind">Wind Speed: <span id="cityWind"></span></div>
@@ -61,28 +67,20 @@
                 </div>
                 <h5>5-day Forecast:</h5>
                 <div class="five-day row">
-                    <div class="col-2 day-0">
-                        <div class="badge badge-primary">
-                            Date
-                            <br />
-                            Icon
-                            <br />
-                            Temp
-                            <br />
-                            Humidity
-                        </div>
+                    <div class="col-md-2 day-0">
+                        <div class="badge badge-primary"></div>
                     </div>
-                    <div class="col-2 day-1">
-                        <div class="badge badge-primary">Day 1</div>
+                    <div class="col-md-2 day-1">
+                        <div class="badge badge-primary"></div>
                     </div>
-                    <div class="col-2 day-2">
-                        <div class="badge badge-primary">Day 2</div>
+                    <div class="col-md-2 day-2">
+                        <div class="badge badge-primary"></div>
                     </div>
-                    <div class="col-2 day-3">
-                        <div class="badge badge-primary">Day 3</div>
+                    <div class="col-md-2 day-3">
+                        <div class="badge badge-primary"></div>
                     </div>
-                    <div class="col-2 day-4">
-                        <div class="badge badge-primary">Day 4</div>
+                    <div class="col-md-2 day-4">
+                        <div class="badge badge-primary"></div>
                     </div>
                 </div>
             </div>
